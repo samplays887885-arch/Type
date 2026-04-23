@@ -1,2 +1,6 @@
 # Type
-type
+Type Things
+GUACAMOLE
+NYAN 
+EVERITHING
+just doesnt have special characters
