@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Type</title>
+    <style>
+        /* FUNDO BRANCO ABSOLUTO */
+        body { 
+            background-color: #FFFFFF !important; 
+            font-family: sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* BOTÃO CINZA NEUTRO (SEM AZUL) */
+        button {
+            background-color: #d4d0c8; /* Cinza médio clássico e seco */
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            box-shadow: 1px 1px 0px #000000;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 2px;
+            color: #000000;
+        }
+
+        /* CLIQUE DO BOTÃO */
+        button:active {
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            box-shadow: none;
+            transform: translate(1px, 1px);
+        }
+
+        /* MOLDURA DA JANELA */
+        .janela {
+            background-color: #d4d0c8;
+            border: 2px solid;
+            border-color: #ffffff #808080 #808080 #ffffff;
+            padding: 15px;
+            display: inline-block;
+        }
+
+        /* VISOR BRANCO */
+        #visor { 
+            background-color: #ffffff;
+            border: 2px solid;
+            border-color: #808080 #ffffff #ffffff #808080;
+            padding: 10px;
+            min-height: 50px;
+            width: 520px;
+            font-size: 24px;
+            font-family: "Courier New", monospace;
+            white-space: pre-wrap;
+            margin-top: 15px;
+            color: #000000;
+        }
+
+        .creditos {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            font-size: 11px;
+            color: #000000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="janela">
+    <!-- NÚMEROS -->
+    <div>
+        <button onclick="digitar('1')">1</button><button onclick="digitar('2')">2</button><button onclick="digitar('3')">3</button><button onclick="digitar('4')">4</button><button onclick="digitar('5')">5</button><button onclick="digitar('6')">6</button><button onclick="digitar('7')">7</button><button onclick="digitar('8')">8</button><button onclick="digitar('9')">9</button><button onclick="digitar('0')">0</button>
+    </div>
+    
+    <br>
+
+    <!-- LETRAS -->
+    <div>
+        <button onclick="digitar('A')">A</button><button onclick="digitar('B')">B</button><button onclick="digitar('C')">C</button><button onclick="digitar('D')">D</button><button onclick="digitar('E')">E</button><button onclick="digitar('F')">F</button><button onclick="digitar('G')">G</button><button onclick="digitar('H')">H</button><button onclick="digitar('I')">I</button><button onclick="digitar('J')">J</button><button onclick="digitar('K')">K</button><button onclick="digitar('L')">L</button><button onclick="digitar('M')">M</button><button onclick="digitar('N')">N</button><button onclick="digitar('O')">O</button><button onclick="digitar('P')">P</button><button onclick="digitar('Q')">Q</button><button onclick="digitar('R')">R</button><button onclick="digitar('S')">S</button><button onclick="digitar('T')">T</button><button onclick="digitar('U')">U</button><button onclick="digitar('V')">V</button><button onclick="digitar('W')">W</button><button onclick="digitar('X')">X</button><button onclick="digitar('Y')">Y</button><button onclick="digitar('Z')">Z</button>
+    </div>
+
+    <br>
+
+    <!-- CONTROLES -->
+    <div>
+        <button onclick="apagar()">Backspace</button>
+        <button onclick="limparTudo()" style="color: #FF0000; font-weight: bold;">Erase All</button>
+        <button onclick="digitar(' ')" style="width: 160px;">Space</button>
+    </div>
+
+    <div id="visor"></div>
+</div>
+
+<div class="creditos">CREDITS MUKA, GEMINI</div>
+
+<script>
+    const visor = document.getElementById('visor');
+    function digitar(c) { visor.innerText += c; }
+    function apagar() { visor.innerText = visor.innerText.slice(0, -1); }
+    function limparTudo() { if(confirm("Erase All?")) visor.innerText = ""; }
+</script>
+
+</body>
+</html>
